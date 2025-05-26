@@ -3,3 +3,4 @@
 - QT + Qml
 - Cpp
 - spdlog
+- CMake + Ninja
