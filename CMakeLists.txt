@@ -17,13 +17,13 @@ find_package(Qt6 6.5 REQUIRED COMPONENTS Quick Core)
 qt_standard_project_setup()
 
 qt_add_executable(rfcReader
-    main.cpp
-    engine.h engine.cpp
-    rfcworker.h rfcworker.cpp
-    networkmanager.h networkmanager.cpp
-    logger.h logger.cpp
+    src/main.cpp
+    headers/engine.h src/engine.cpp
+    headers/rfcworker.h src/rfcworker.cpp
+    headers/networkmanager.h src/networkmanager.cpp
+    headers/logger.h src/logger.cpp
     resources.qrc
-    settings.h settings.cpp
+    headers/settings.h src/settings.cpp
 )
 
 target_link_libraries(rfcReader
@@ -36,7 +36,7 @@ target_link_libraries(rfcReader
 target_include_directories(rfcReader
     PRIVATE
         ${SPDLOG_INCLUDE_DIR}
-)
+        ${CMAKE_SOURCE_DIR}/headers)
 
 include(GNUInstallDirs)
 
